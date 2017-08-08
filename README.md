@@ -1,0 +1,1 @@
+# docker-hadoop-pseudo-distributed-mode
