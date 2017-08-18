@@ -35,9 +35,10 @@ The [scripts/hadoop-services.sh](scripts/hadoop-services.sh) is running followin
 
 - Basic Hadoop filesystem information and statistics
 	```
+	
 	Configured Capacity: 37912903680 (35.31 GB)
-	Present Capacity: 11530969088 (10.74 GB)
-	DFS Remaining: 11530944512 (10.74 GB)
+	Present Capacity: 8332066816 (7.76 GB)
+	DFS Remaining: 8332042240 (7.76 GB)
 	DFS Used: 24576 (24 KB)
 	DFS Used%: 0.00%
 	Under replicated blocks: 0
@@ -48,22 +49,22 @@ The [scripts/hadoop-services.sh](scripts/hadoop-services.sh) is running followin
 	-------------------------------------------------
 	Live datanodes (1):
 	
-	Name: 127.0.0.1:50010 (localhost)
-	Hostname: hadoop-testbed
+	Name: 172.17.0.2:50010 (testbed)
+	Hostname: testbed
 	Decommission Status : Normal
 	Configured Capacity: 37912903680 (35.31 GB)
 	DFS Used: 24576 (24 KB)
-	Non DFS Used: 26381934592 (24.57 GB)
-	DFS Remaining: 11530944512 (10.74 GB)
+	Non DFS Used: 29580906496 (27.55 GB)
+	DFS Remaining: 8331972608 (7.76 GB)
 	DFS Used%: 0.00%
-	DFS Remaining%: 30.41%
+	DFS Remaining%: 21.98%
 	Configured Cache Capacity: 0 (0 B)
 	Cache Used: 0 (0 B)
 	Cache Remaining: 0 (0 B)
 	Cache Used%: 100.00%
 	Cache Remaining%: 0.00%
 	Xceivers: 1
-	Last contact: Sat Aug 05 17:58:00 UTC 2017	
+	Last contact: Fri Aug 18 12:30:38 UTC 2017
 	```
  
 - Hadoop Terasort Benchmark Test
@@ -72,6 +73,16 @@ The [scripts/hadoop-services.sh](scripts/hadoop-services.sh) is running followin
 
 - (Optional) Hadoop MRBENCH Test
 
+# Web UI
+
+- NameNode can be accessed on host machine browser at [http://HOST-OS-IP:8088/](http://0.0.0.0:8088/)
+
+- Resource Manager can be accessed on host machine browser at [http://HOST-OS-IP:50070/](http://0.0.0.0:50070/)
+
+- Secondary NameNode can be accessed on host machine browser at [http://HOST-OS-IP:50090/](http://0.0.0.0:50090/)
+
+- DataNode can be accessed on host machine browser at [http://HOST-OS-IP:50075/](http://0.0.0.0:50075/)
+
 ## Tools
 ```
 Docker version 17.06.0-ce
@@ -79,3 +90,12 @@ Ubuntu Trusty 14.04 Host OS
 Eclipse IDE for Java EE Developers Oxygen (4.7.0)
 Eclipse Docker Tooling 3.1.0
 ```
+
+# Configuration References
+- [Apache Hadoop 2.7.2 docs](https://hadoop.apache.org/docs/r2.7.2/)
+- [core-default.xml](https://hadoop.apache.org/docs/r2.7.2/hadoop-project-dist/hadoop-common/core-default.xml)
+- [hdfs-default.xml](https://hadoop.apache.org/docs/r2.7.2/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml)
+- [mapred-default.xml](https://hadoop.apache.org/docs/r2.7.2/hadoop-mapreduce-client/hadoop-mapreduce-client-core/mapred-default.xml)
+- [yarn-default.xml](https://hadoop.apache.org/docs/r2.7.2/hadoop-yarn/hadoop-yarn-common/yarn-default.xml)
+- [DeprecatedProperties.html](https://hadoop.apache.org/docs/r2.7.2/hadoop-project-dist/hadoop-common/DeprecatedProperties.html)
+
