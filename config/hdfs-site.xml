@@ -5,6 +5,10 @@
 	  Pseudo-Distributed Mode.
 	-->
 	<property>
+		<name>dfs.blocksize</name>
+		<value>134217728</value>
+	</property>
+	<property>
 		<name>dfs.replication</name>
 		<value>1</value>
 	</property>
