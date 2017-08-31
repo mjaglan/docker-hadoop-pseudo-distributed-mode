@@ -11,21 +11,23 @@ Follow the instructions from [Post-installation steps for Linux](https://docs.do
 
 
 ## How to Run
-- Go to your terminal or command line.
+- Go to your terminal.
 - Clone this repository and go inside it
 	```
 	git clone https://github.com/mjaglan/docker-hadoop-pseudo-distributed-mode.git
 	cd docker-hadoop-pseudo-distributed-mode
 	```
-- Run the following file
+- Run the following script
 	```
 	. ./restart-all.sh
 	```
 
 ## After Starting Hadoop System
 The [scripts/hadoop-services.sh](scripts/hadoop-services.sh) is running following commands after starting Hadoop System - 
+
 - Java Virtual Machine Process Status Tool (jps)
 	```
+   <pid>   <process name>
 	266 org.apache.hadoop.hdfs.server.datanode.DataNode
 	142 org.apache.hadoop.hdfs.server.namenode.NameNode
 	428 org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode
@@ -49,22 +51,7 @@ The [scripts/hadoop-services.sh](scripts/hadoop-services.sh) is running followin
 	-------------------------------------------------
 	Live datanodes (1):
 	
-	Name: 172.17.0.2:50010 (testbed)
-	Hostname: testbed
-	Decommission Status : Normal
-	Configured Capacity: 37912903680 (35.31 GB)
-	DFS Used: 24576 (24 KB)
-	Non DFS Used: 29580906496 (27.55 GB)
-	DFS Remaining: 8331972608 (7.76 GB)
-	DFS Used%: 0.00%
-	DFS Remaining%: 21.98%
-	Configured Cache Capacity: 0 (0 B)
-	Cache Used: 0 (0 B)
-	Cache Remaining: 0 (0 B)
-	Cache Used%: 100.00%
-	Cache Remaining%: 0.00%
-	Xceivers: 1
-	Last contact: Fri Aug 18 12:30:38 UTC 2017
+	...
 	```
  
 - Hadoop Terasort Benchmark Test

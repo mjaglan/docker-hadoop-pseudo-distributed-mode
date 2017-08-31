@@ -3,7 +3,7 @@
 # variables
 IMG_NAME="mjaglan/ubuntuhadoop2017"
 HOST_NAME="testbed"
-NETWORK_NAME=$HOSHOST_NAME
+NETWORK_NAME=$HOST_NAME
 
 # clean up containers
 docker stop $(docker ps -a -q)
@@ -19,12 +19,13 @@ docker build  -t "$IMG_NAME" "$(pwd)"
 # Default docker network name is 'bridge', driver is 'bridge', scope is 'local'
 # Create a new network with any name, and keep 'bridge' driver for 'local' scope.
 NET_QUERY=$(docker network ls | grep -i $NETWORK_NAME)
-if [ -z $NET_QUERY ]; then
+if [ -z "$NET_QUERY" ]; then
+	echo "Create network >>> $NETWORK_NAME"
 	docker network create --driver=bridge $NETWORK_NAME
 fi
 
 # start hadoop container
-:'
+: '
 LINK: https://stackoverflow.com/a/35901232
 Daemon                   Default Port  Configuration Parameter
 -----------------------  ------------ ----------------------------------
