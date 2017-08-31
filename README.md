@@ -28,11 +28,11 @@ The [scripts/hadoop-services.sh](scripts/hadoop-services.sh) is running followin
 - Java Virtual Machine Process Status Tool (jps)
 	```
    <pid>   <process name>
-	266 org.apache.hadoop.hdfs.server.datanode.DataNode
-	142 org.apache.hadoop.hdfs.server.namenode.NameNode
-	428 org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode
-	678 org.apache.hadoop.yarn.server.nodemanager.NodeManager
-	579 org.apache.hadoop.yarn.server.resourcemanager.ResourceManager
+	266    org.apache.hadoop.hdfs.server.datanode.DataNode
+	142    org.apache.hadoop.hdfs.server.namenode.NameNode
+	428    org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode
+	678    org.apache.hadoop.yarn.server.nodemanager.NodeManager
+	579    org.apache.hadoop.yarn.server.resourcemanager.ResourceManager
 	```
 
 - Basic Hadoop filesystem information and statistics
