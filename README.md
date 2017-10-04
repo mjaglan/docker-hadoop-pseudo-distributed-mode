@@ -1,4 +1,4 @@
-# Run Hadoop 2.7 on Docker in Pseudo-distributed mode
+# Run Hadoop 2.7 inside docker container in Pseudo-distributed mode
 
 ## Install Docker CE on Ubuntu
 
@@ -21,6 +21,7 @@ Follow the instructions from [Post-installation steps for Linux](https://docs.do
 	```
 	. ./restart-all.sh
 	```
+
 
 ## After Starting Hadoop System
 The [scripts/hadoop-services.sh](scripts/hadoop-services.sh) is running following commands after starting Hadoop System - 
@@ -60,15 +61,15 @@ The [scripts/hadoop-services.sh](scripts/hadoop-services.sh) is running followin
 
 - (Optional) Hadoop MRBENCH Test
 
-# Web UI
 
-- NameNode can be accessed on host machine browser at [http://HOST-OS-IP:8088/](http://0.0.0.0:8088/)
+## Web UI
 
-- Resource Manager can be accessed on host machine browser at [http://HOST-OS-IP:50070/](http://0.0.0.0:50070/)
+- NameNode can be accessed on browser at [http://CONTAINER-IP:8088/](http://0.0.0.0:8088/)
 
-- Secondary NameNode can be accessed on host machine browser at [http://HOST-OS-IP:50090/](http://0.0.0.0:50090/)
+- Resource Manager can be accessed on browser at [http://CONTAINER-IP:50070/](http://0.0.0.0:50070/)
 
-- DataNode can be accessed on host machine browser at [http://HOST-OS-IP:50075/](http://0.0.0.0:50075/)
+- Secondary can be accessed on browser at [http://CONTAINER-IP:50090/](http://0.0.0.0:50090/)
+
 
 ## Tools
 ```
@@ -78,11 +79,12 @@ Eclipse IDE for Java EE Developers Oxygen (4.7.0)
 Eclipse Docker Tooling 3.1.0
 ```
 
-# Configuration References
-- [Apache Hadoop 2.7.2 docs](https://hadoop.apache.org/docs/r2.7.2/)
-- [core-default.xml](https://hadoop.apache.org/docs/r2.7.2/hadoop-project-dist/hadoop-common/core-default.xml)
-- [hdfs-default.xml](https://hadoop.apache.org/docs/r2.7.2/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml)
-- [mapred-default.xml](https://hadoop.apache.org/docs/r2.7.2/hadoop-mapreduce-client/hadoop-mapreduce-client-core/mapred-default.xml)
-- [yarn-default.xml](https://hadoop.apache.org/docs/r2.7.2/hadoop-yarn/hadoop-yarn-common/yarn-default.xml)
-- [DeprecatedProperties.html](https://hadoop.apache.org/docs/r2.7.2/hadoop-project-dist/hadoop-common/DeprecatedProperties.html)
+
+## Configuration References
+- [Apache Hadoop 2.7.3 docs](https://hadoop.apache.org/docs/r2.7.3/)
+- [core-default.xml](https://hadoop.apache.org/docs/r2.7.3/hadoop-project-dist/hadoop-common/core-default.xml)
+- [hdfs-default.xml](https://hadoop.apache.org/docs/r2.7.3/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml)
+- [mapred-default.xml](https://hadoop.apache.org/docs/r2.7.3/hadoop-mapreduce-client/hadoop-mapreduce-client-core/mapred-default.xml)
+- [yarn-default.xml](https://hadoop.apache.org/docs/r2.7.3/hadoop-yarn/hadoop-yarn-common/yarn-default.xml)
+- [DeprecatedProperties.html](https://hadoop.apache.org/docs/r2.7.3/hadoop-project-dist/hadoop-common/DeprecatedProperties.html)
 

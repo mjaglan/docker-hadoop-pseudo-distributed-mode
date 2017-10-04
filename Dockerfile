@@ -18,10 +18,10 @@ RUN ssh-keygen -t rsa -f $HOME/.ssh/id_rsa -P "" \
     && cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
 
 # download & extract & move hadoop & clean up
-RUN wget -O /hadoop.tar.gz -q http://apache.osuosl.org/hadoop/common/hadoop-2.7.2/hadoop-2.7.2.tar.gz \
 # TODO: write a way of untarring file to "/usr/local/hadoop" directly
+RUN wget -O /hadoop.tar.gz -q https://iu.box.com/shared/static/u9wy21nev5hxznhuhu0v6dzmcqhkhaz7.gz \
 	&& tar xfz hadoop.tar.gz \
-	&& mv /hadoop-2.7.2 /usr/local/hadoop \
+	&& mv /hadoop-2.7.3 /usr/local/hadoop \
 	&& rm /hadoop.tar.gz
 
 # hadoop environment variables
@@ -35,7 +35,7 @@ RUN mkdir -p $HADOOP_HOME/hdfs/namenode \
 # setup configs - [standalone, pseudo-distributed mode, fully distributed mode]
 # NOTE: Directly using COPY/ ADD will NOT work if you are NOT using absolute paths inside the docker image.
 # Temporary files: http://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s18.html
-COPY config/* /tmp/
+COPY config/ /tmp/
 RUN mv /tmp/ssh_config $HOME/.ssh/config \
     && mv /tmp/hadoop-env.sh $HADOOP_HOME/etc/hadoop/hadoop-env.sh \
     && mv /tmp/core-site.xml $HADOOP_HOME/etc/hadoop/core-site.xml \
